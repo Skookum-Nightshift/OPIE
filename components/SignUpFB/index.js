@@ -13,11 +13,12 @@ class SignUp extends React.Component {
 
         // init the FB JS SDK
         Parse.FacebookUtils.init({
-          appId      : '***********',                        // App ID from the app dashboard
-          channelUrl : '//localhost.local/XXXXX/channel.html', // Channel file for x-domain comms
+          appId      : '964785910226704',                        // App ID from the app dashboard
+          // channelUrl : '//localhost.local/XXXXX/channel.html', // Channel file for x-domain comms
           status     : false,                                 // Check Facebook Login status
           xfbml      : true,                                  // Look for social plugins on the page
-          logging    : true
+          logging    : true,
+          version    : 'v2.5'
         });
 
         Parse.FacebookUtils.logIn(null, {
