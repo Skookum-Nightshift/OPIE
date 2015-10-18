@@ -9,9 +9,12 @@ import {RouteHandler} from 'react-router';
 class AppBase extends React.Component {
 
   render(): ?ReactElement {
+    
     return (
       <div className="AppBase">
-        <RouteHandler />
+        
+            <RouteHandler />
+        
       </div>
     );
   }

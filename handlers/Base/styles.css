@@ -1,2 +1,102 @@
 /** @define AppBase; use strict */
 @import 'normalize.css';
+
+body { 
+    background-color: #5C6BC0;
+    color: white;
+    height: 100%;
+    background-image: url('/public/img/splash-bg-indigo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#app {
+    max-width: 1200px; 
+    margin: 0 auto;
+    height:100%;
+    /*background-color: #9FA8DA; /*200*/
+}
+
+a { text-decoration: none; }
+ a:visited { color: inherit; }
+
+p { 
+    font-weight: 200; 
+    letter-spacing: 1px;
+    font-size: 14px; 
+}
+
+h1 { 
+    text-transform: uppercase; 
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+.circle { 
+    border-radius: 50%; 
+    width: 100px;
+    height: 100px;
+    color:#87c7e9;
+    text-align: center;
+    background-color: white;
+    margin: 0 auto;
+}
+    .logo { padding-top:40px; }
+
+
+
+/* TRANSITIONS */
+.carousel-enter {
+  opacity: 0.01;
+}
+
+.carousel-enter.carousel-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.carousel-leave {
+  opacity: 1;
+}
+
+.carousel-leave.carousel-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+
+
+
+
+/* LAYOUTS */
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*='col-'] { display: inline-block; vertical-align: top;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    body { }
+    [class*="col-"] {
+        width: 100%;
+    }
+    .SignUp { margin:15px !important;}
+    .signup-form Button { width: 100%; }
+    .signup-content { text-align: center; }
+    .form-content { text-align: center; }
+    .Quiz .col-6 { width: 50% !important; }
+
+}

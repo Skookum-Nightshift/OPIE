@@ -1,0 +1,32 @@
+/** @define NotFound; use strict */
+@import 'normalize.css';
+
+.Quiz {
+    background-color:white;
+    height: 100vh;
+    max-height: 100%;
+    color:#777;
+    padding:5px;
+}
+.previous-button { padding-left:5px; }
+.quiz-content { 
+    height: 45vh; 
+    padding:5px;
+}
+
+.quiz-button {
+    background-color: #9FA8DA;
+    height: 100%;
+    text-align: center;
+}
+    .quiz-button p { padding-top: 20px; }
+
+.qb-1 { background-color: #FFF8E1;}
+.qb-2 { background-color: #FCE4EC;}
+.qb-3 { background-color: #E8F5E9;}
+.qb-4 { background-color: #E8EAF6;}
+
+.qb-1:hover { background-color: #FFE57F;}
+.qb-2:hover { background-color: #F8BBD0;}
+.qb-3:hover { background-color: #C8E6C9;}
+.qb-4:hover { background-color: #C5CAE9;}
