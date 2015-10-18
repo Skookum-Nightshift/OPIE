@@ -13,6 +13,7 @@ import App from './handlers/Base';
 import Home from './handlers/Home';
 import SignUp from './handlers/SignUp';
 import Quiz from './handlers/Quiz';
+import Results from './handlers/Results';
 
 var routes = (
   <Route path="/" handler={App} >
@@ -21,6 +22,7 @@ var routes = (
 
     <Route path="/signup" name="SignUp" handler={SignUp} />
     <Route path="/quiz" handler={Quiz} />
+    <Route path="/results" name="Results" handler={Results} />
   </Route>
 );
 
