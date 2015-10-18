@@ -6,11 +6,13 @@ require('./styles.css');
 import React from 'react';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
+import RadialLoader from 'RadialLoader';
 
 class Quiz extends React.Component {
   render(): ?ReactElement {
     return (
       <div className="Quiz">
+
         <p className="previous-button"><a href="/signup"><i className="fa fa-arrow-left"></i> Previous Questions </a> <br clear="all" /></p>
         <div className="col-6">
             <div className="quiz-content">
@@ -36,6 +38,7 @@ class Quiz extends React.Component {
             <div className="quiz-content">
             <div className="quiz-button qb-4">
                 <p>Answer</p> 
+                <RadialLoader progress="50" />
             </div></div>
         </div>  
 

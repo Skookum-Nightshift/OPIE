@@ -9,7 +9,7 @@ class Home extends React.Component {
   render(): ?ReactElement {
     return (
       <div className="Home">
-        <div className="circle"><div className="logo">Logo</div></div>
+        <div className="circle-logo"><div className="logo">Logo</div></div>
         <h1>Pathseer</h1>
         <p className="home-content">Explore career paths that suits your interests using our interactive quiz. 
         Use your results to connect with professional mentors and begin planning your future!</p>
