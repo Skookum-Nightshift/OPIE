@@ -6,6 +6,7 @@ require('./styles.css');
 import React from 'react';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
+import SignUpFB from 'SignUpFB';
 
 class SignUp extends React.Component {
   render(): ?ReactElement {
@@ -26,7 +27,7 @@ class SignUp extends React.Component {
                     <Button type="indigo"> Continue </Button>
                 </div>
                 <p> or sign up using Facebook or Twitter </p>
-                <Button type='facebook'><i className="fa fa-facebook"></i></Button> 
+                <SignUpFB />
                 <Button type='twitter'><i className="fa fa-twitter"></i></Button>
             </div>
             

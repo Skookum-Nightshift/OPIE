@@ -11,6 +11,7 @@ class SignUp extends React.Component {
 
     loginToFacebook() {
 
+        Parse.initialize("3Du0HF5jjvlb1bxyV53wf7P5uB58vBgvMrVMwwiz", "wytQ56mFhsRpXnGMxQIVkDbkcDQYpuXAQW4CuAsL");
         // init the FB JS SDK
         Parse.FacebookUtils.init({
           appId      : '964785910226704',                        // App ID from the app dashboard
@@ -43,33 +44,7 @@ class SignUp extends React.Component {
 
   render(): ?ReactElement {
     return (
-      <div className="SignUp">
-        <div className="col-6">
-            <div className="signup-content">
-                <h1> Create an Account </h1>
-                <p>To start your PathSeer Quiz, create a free account and unlock exclusive resources</p>
-            </div>
-        </div>
-
-        <div className="col-6"> 
-            <div className="signup-content">  
-                <div className="signup-form">
-                    <input type="text" placeholder="Name" className="form-content"/><br/>
-                    <input type="text" placeholder="Email" className="form-content"/><br/>
-                    <Button type="indigo"> Continue </Button>
-                </div>
-                <p> or sign up using Facebook or Twitter </p>
-                <Button onClick={this.loginToFacebook} type='facebook'><i className="fa fa-facebook"></i></Button> 
-                <Button type='twitter'><i className="fa fa-twitter"></i></Button>
-            </div>
-            
-        </div>    
-
-            
-
-                    
-        <RouteHandler />
-      </div>
+      <Button onClick={this.loginToFacebook} type='facebook'><i className="fa fa-facebook"></i></Button> 
     );
   }
 }
