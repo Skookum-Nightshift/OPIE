@@ -11,7 +11,7 @@ class SignUp extends React.Component {
 
     loginToFacebook() {
 
-        Parse.initialize("3Du0HF5jjvlb1bxyV53wf7P5uB58vBgvMrVMwwiz", "wytQ56mFhsRpXnGMxQIVkDbkcDQYpuXAQW4CuAsL");
+        
         // init the FB JS SDK
         Parse.FacebookUtils.init({
           appId      : '964785910226704',                        // App ID from the app dashboard

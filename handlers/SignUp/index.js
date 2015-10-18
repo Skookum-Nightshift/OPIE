@@ -24,7 +24,7 @@ class SignUp extends React.Component {
                 <div className="signup-form">
                     <input type="text" placeholder="Name" className="form-content"/><br/>
                     <input type="text" placeholder="Email" className="form-content"/><br/>
-                    <Button type="indigo"> Continue </Button>
+                    <Button type="indigo" onClick={() => {this.context.router.transitionTo('Quiz');}}> Continue </Button>
                 </div>
                 <p> or sign up using Facebook or Twitter </p>
                 <SignUpFB />
@@ -41,5 +41,9 @@ class SignUp extends React.Component {
     );
   }
 }
+
+SignUp.contextTypes = {
+    router: React.PropTypes.func.isRequired
+};
 
 export default SignUp;

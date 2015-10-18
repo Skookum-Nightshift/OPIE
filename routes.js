@@ -21,8 +21,12 @@ var routes = (
     <NotFoundRoute handler={NotFound} />
 
     <Route path="/signup" name="SignUp" handler={SignUp} />
+<<<<<<< Updated upstream
     <Route path="/quiz" handler={Quiz} />
     <Route path="/results" name="Results" handler={Results} />
+=======
+    <Route path="/quiz" name="Quiz" handler={Quiz} />
+>>>>>>> Stashed changes
   </Route>
 );
 

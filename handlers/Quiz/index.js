@@ -13,18 +13,27 @@ class Quiz extends React.Component {
   render(): ?ReactElement {
     return (
       <div className="Quiz">
+        
 
-        <p className="previous-button"><a href="/signup"><i className="fa fa-arrow-left"></i> Previous Questions </a> <br clear="all" /></p>
+        <p className="previous-button"><a href="/signup" onClick={() => {this.context.router.transitionTo('SignUp');}}><i className="fa fa-arrow-left"></i> Previous Question </a> 
+            <span className="current-question"> Current Question </span>
+        </p>
+        
+        <br clear="all" />
         <AnswerGroup />
 
 
             
 
-                    
+        <RadialLoader progress="86"/>            
         <RouteHandler />
       </div>
     );
   }
 }
+
+Quiz.contextTypes = {
+    router: React.PropTypes.func.isRequired
+};
 
 export default Quiz;

@@ -3,11 +3,25 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 
 .RadialLoader {
-  margin: 50px;
+  margin: auto auto;
   width: 120px;
   height: 120px;
   background-color: #d6dadc;
   border-radius: 50%;
+
+  position: relative;
+  top:-53vh;
+}
+
+
+.RadialLoader .circleLoaderBase {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top:-10px;
+  left:-10px;
 }
 
 .RadialLoader .circle .mask,
@@ -38,15 +52,15 @@
 
 .RadialLoader .circle .mask .fill {
   clip: rect(0px, 60px, 120px, 0px);
-  background-color: #97a71d;
+  background-color:  #5C6BC0;
 }
 
 .RadialLoader .inset {
-  width: 108px;
-  height: 108px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  margin-left: 6px;
-  margin-top: 6px;
+  margin-left: 10px;
+  margin-top: 10px;
   background-color: #fbfbfb;
   border-radius: 50%;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
