@@ -16,6 +16,7 @@ class AppBase extends React.Component {
     
     return (
       <div className="AppBase">
+        <div className="main-logo"><img src="./public/img/logo.png" /></div>
         
             <RouteHandler />
         
