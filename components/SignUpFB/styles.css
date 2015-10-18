@@ -1,0 +1,33 @@
+/** @define NotFound; use strict */
+@import 'normalize.css';
+
+.SignUp {
+    margin-top: 20px;
+    background-color:#E8EAF6;
+}
+
+.signup-content {
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+    .signup-content h1 { color: #3F51B5;}
+    .signup-content p { line-height: 22px; color:#777;}
+    .signup-content Button { margin-right: 10px; }
+
+.signup-form { padding-top: 30px; }
+
+.form-content {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    width: 90%;
+    box-shadow: none;
+    color: #ccc;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
