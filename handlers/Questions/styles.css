@@ -1,0 +1,57 @@
+/** @define NotFound; use strict */
+@import 'normalize.css';
+
+.Questions {
+    margin-top: 20px;
+    background-color:#E8EAF6;
+}
+
+.signup-content {
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+    .question-block { 
+        background-color: white; 
+        padding: 20px; 
+        margin: 0 20px 20px 20px;  
+        transition: all .2s ease-in-out;
+    }
+        .question-block:hover {
+            box-shadow: 0px 0px 10px #aaa;
+        }
+    .question-block span { 
+        float: left; 
+        margin-right: 20px; 
+        background-color: purple;
+        width: 22px; height:22px;
+        border-radius: 50%; 
+        text-align: center; 
+    }
+        .question-block p { margin: 0; }
+        .question-number { margin-top: 2px; }
+
+    .signup-content h1 { color: #3F51B5;}
+    
+    .content p { line-height: 22px; color:#777;}
+    .signup-content Button { margin-right: 10px; }
+
+.question-form { padding-top: 30px; }
+
+.form-content {
+    margin-bottom: 20px;
+    text-align: center; 
+    padding: 10px 0;
+}
+
+.Questions input[type="text"] {
+    border: 0; 
+    width: 100%;
+    box-shadow: none;
+    color: #ccc;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  color:#333;
+  box-shadow: 0px 0px 10px #aaa;
+}

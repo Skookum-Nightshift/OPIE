@@ -25,7 +25,7 @@ class Quiz extends React.Component {
 
             
 
-        <RadialLoader progress="86"/>            
+        <RadialLoader progress="50"/>            
         <RouteHandler />
       </div>
     );
