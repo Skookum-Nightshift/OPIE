@@ -12,14 +12,14 @@ class Questions extends React.Component {
     return (
       <div className="Questions">
         <div className="col-6">
-            <div className="signup-content">
+            <div className="content">
                 <h1> Content Management </h1>
                 <p>To start your PathSeer Quiz, create a free account and unlock exclusive resources</p>
             </div>
         </div>
 
         <div className="col-6"> 
-            <div className="signup-content">  
+            <div className="content">  
                 <div className="question-form">
 
                     <input type="text" placeholder="Type Question" className="form-content"/><br/>
@@ -32,7 +32,7 @@ class Questions extends React.Component {
         <div className="col-12"> 
             <div className="question-block content">  
                 <span><div className="question-number">1</div></span>
-                <p> Question 1 - Blah blah </p>
+                <p> Question 1 - Bacon ipsum dolor amet bacon corned beef picanha sirloin biltong meatloaf shank porchetta jowl ham hock pancetta ham t-bone pig. </p>
             </div>
         </div>   
 

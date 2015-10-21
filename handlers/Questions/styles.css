@@ -6,10 +6,10 @@
     background-color:#E8EAF6;
 }
 
-.signup-content {
-    padding: 0 20px;
-    padding-bottom: 20px;
-}
+.content p { line-height: 22px; color:#777;}
+.content h1 { color: #3F51B5; }
+.content { padding: 0 20px 20px 20px; }
+
     .question-block { 
         background-color: white; 
         padding: 20px; 
@@ -23,25 +23,22 @@
         float: left; 
         margin-right: 20px; 
         background-color: purple;
-        width: 22px; height:22px;
+        width: 26px; height:26px;
         border-radius: 50%; 
         text-align: center; 
+        margin-top: -2px; 
     }
         .question-block p { margin: 0; }
-        .question-number { margin-top: 2px; }
+        .question-number { margin-top: 4px; }
 
-    .signup-content h1 { color: #3F51B5;}
-    
-    .content p { line-height: 22px; color:#777;}
-    .signup-content Button { margin-right: 10px; }
 
 .question-form { padding-top: 30px; }
+    .form-content {
+        margin-bottom: 20px;
+        text-align: center; 
+        padding: 10px 0;
+    }
 
-.form-content {
-    margin-bottom: 20px;
-    text-align: center; 
-    padding: 10px 0;
-}
 
 .Questions input[type="text"] {
     border: 0; 
