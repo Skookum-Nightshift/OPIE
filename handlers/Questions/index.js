@@ -6,8 +6,10 @@ require('./styles.css');
 import React from 'react';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
+import QuestionList from 'QuestionList';
 
 class Questions extends React.Component {
+
   render(): ?ReactElement {
     return (
       <div className="Questions">
@@ -29,12 +31,7 @@ class Questions extends React.Component {
             </div>
         </div>    
 
-        <div className="col-12"> 
-            <div className="question-block content">  
-                <span><div className="question-number">1</div></span>
-                <p> Question 1 - Bacon ipsum dolor amet bacon corned beef picanha sirloin biltong meatloaf shank porchetta jowl ham hock pancetta ham t-bone pig. </p>
-            </div>
-        </div>   
+        <QuestionList />
 
             
 

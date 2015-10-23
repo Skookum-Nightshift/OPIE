@@ -7,13 +7,13 @@
 }
 
 .content p { line-height: 22px; color:#777;}
-.content h1 { color: #3F51B5; }
+.content h1, .content h2 { color: #3F51B5; }
 .content { padding: 0 20px 20px 20px; }
 
     .question-block { 
         background-color: white; 
         padding: 20px; 
-        margin: 0 20px 20px 20px;  
+        margin: 0 0 20px 0;  
         transition: all .2s ease-in-out;
     }
         .question-block:hover {
