@@ -16,7 +16,7 @@ class Questions extends React.Component {
         <div className="col-6">
             <div className="content">
                 <h1> Content Management </h1>
-                <p>To start your PathSeer Quiz, create a free account and unlock exclusive resources</p>
+                <p className="CMS-description">This management system is where you add / delete questions.</p>
             </div>
         </div>
 

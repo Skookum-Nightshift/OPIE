@@ -100,4 +100,8 @@ h1, h2, h3 {
     .form-content { text-align: center; }
     .Quiz .col-6 { width: 50% !important; }
 
+    .CMS-description { text-align: center; }
+    .Questions .question-form { text-align: center; }
+    h1, h2 { text-align: center; }
+
 }
