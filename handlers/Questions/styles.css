@@ -46,24 +46,15 @@
         .question-block p { margin: 0; }
         .question-number { margin-top: 4px; }
 
-
-.question-form { padding-top: 30px; }
+.question-tab {  }
+.question-form { 
+    padding: 20px; 
+    background-color: #3F51B5;
+}
     .form-content {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         text-align: center; 
         padding: 10px 0;
     }
 
 
-.Questions input[type="text"] {
-    border: 0; 
-    width: 100%;
-    box-shadow: none;
-    color: #ccc;
-}
-
-input[type="text"]:focus {
-  outline: none;
-  color:#333;
-  box-shadow: 0px 0px 10px #aaa;
-}

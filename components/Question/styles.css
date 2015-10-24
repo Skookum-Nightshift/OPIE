@@ -1,3 +1,4 @@
-.QuestionList { 
-
+.Question { 
+    margin-bottom: 5px; 
+    cursor: pointer; 
 } 

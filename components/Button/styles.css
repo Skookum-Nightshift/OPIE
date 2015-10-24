@@ -4,6 +4,8 @@
     padding: 10px 25px;
     background-color: initial;
     transition: all .2s ease-in;
+    focus:none;
+    outline:none;
 }
 
 .Button.is-black {

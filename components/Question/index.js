@@ -6,18 +6,30 @@ import React from 'react';
 var {PropTypes} = React;
 
 class Question extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            showAnswers: false
+        };
 
+        this.toggleAnswers = this.toggleAnswers.bind(this);
+    }
+
+    toggleAnswers() {
+        this.setState({ showAnswers: !this.state.showAnswers });
+    }
 
     render(): ?ReactElement {
     let { Order, Content, Answer1, Answer2, Answer3, Answer4 } = this.props.item;
 
     return (
         <div className="Question"> 
-            <div className="question-block content">  
+            <div className="question-block content" onClick={this.toggleAnswers}>  
                 <span className="question-circle"><div className="question-number">{Order}</div></span> 
                 <p>{Content}</p>
             </div>
-            <div className="answer-list content">  
+            { this.state.showAnswers ? (
+            <div className="answer-list content animated fadeIn">  
                 <ul>
                     <li><p>A: {Answer1}</p></li> 
                     <li><p>B: {Answer2}</p></li>
@@ -25,6 +37,7 @@ class Question extends React.Component {
                     <li><p>D: {Answer4}</p></li>
                 </ul>
             </div>
+            ) : '' }
         </div>   
     );
   }
