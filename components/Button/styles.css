@@ -27,6 +27,13 @@
     color:white;
     background-color: #3F51B5;
 }
+
+.Button.is-indigo-tab {
+    border: 0px solid #3F51B5;
+    color:white;
+    background-color: #3F51B5;
+}
+
 .Button.is-facebook { 
     border: 1px solid #3b5998;
     background-color: #3b5998; 
@@ -61,6 +68,12 @@
     border: 1px solid #3F51B5;
     color:#3F51B5;
     background-color: white;
+}
+
+.Button.is-indigo-tab:hover {
+    border: 0px solid #3F51B5;
+    color:white;
+    background-color: #AAA;
 }
 
 .Button.is-facebook:hover { 

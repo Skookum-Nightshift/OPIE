@@ -72,26 +72,28 @@ class Questions extends React.Component {
             <div className="content">
                 <h1> Content Management </h1>
                 <p className="CMS-description">This management system is where you add / delete questions.</p>
-                <Button type="indigo" onClick={this.toggleAddQuestionForm}> 
-                    <i className="fa fa-edit"></i> 
+                <Button type="indigo-tab" onClick={this.toggleAddQuestionForm}> 
+                    
                     { this.state.showAddQuestionForm ?
-                        "Cancel"
-                        : "Add Question"
+                        <div><i className="fa fa-close"></i> Cancel</div>
+                        : <div><i className="fa fa-edit"></i> Add Question</div>
                     }
                 </Button>
-                { this.state.showAddQuestionForm ? (
-                <div>
-                    <Button type="indigo" onClick={this.saveQuestion}> Submit </Button>
+
+                { this.state.showAddQuestionForm ? 
+                    <Button type="indigo-tab" onClick={this.saveQuestion}><i className="fa fa-check-circle"></i> Save New Question </Button> : ""
+                }
+
+                { this.state.showAddQuestionForm ? (    
                     <div className="question-tab">  
                         <div className="question-form">
-                            <Input type="text" placeholder="Type Question" value={this.state.question} name="question" onInputChange={this.updateState} className="form-content"/>
-                            <Input type="text" placeholder="Type Answer 1:" value={this.state.answer1} name="answer1" onInputChange={this.updateState} className="form-content"/>
-                            <Input type="text" placeholder="Type Answer 2:" value={this.state.answer2} name="answer2" onInputChange={this.updateState} className="form-content"/>
-                            <Input type="text" placeholder="Type Answer 3:" value={this.state.answer3} name="answer3" onInputChange={this.updateState} className="form-content"/>
-                            <Input type="text" placeholder="Type Answer 4:" value={this.state.answer4} name="answer4" onInputChange={this.updateState} className="form-content"/>                    
+                            <Input type="text" placeholder="Type Question" value={this.state.question} name="question" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 1:" value={this.state.answer1} name="answer1" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 2:" value={this.state.answer2} name="answer2" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 3:" value={this.state.answer3} name="answer3" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 4:" value={this.state.answer4} name="answer4" onInputChange={this.updateState} />                    
                         </div>
                     </div>
-                </div>
                 ) : '' }  
             </div>
         </div>
