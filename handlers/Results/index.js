@@ -9,10 +9,10 @@ class Results extends React.Component {
   render(): ?ReactElement {
     return (
       <div className="Results">
-        <div className="circle-logo"><div className="logo">Logo</div></div>
+        <img src="/public/img/sample-circle-photo.png" />
         <h1>Career Category</h1>
         <h4>This is where your tagline goes</h4>
-        <p className="results-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus, ante in rutrum posuere, tortor ipsum semper tortor, non rhoncus sem eros ut nisl. Nunc et aliquet lacus, ac congue neque. Vestibulum diam augue, iaculis quis egestas cursus, iaculis a est. Pellentesque id commodo lorem. Cras nec vestibulum tellus. Nunc congue sapien nec venenatis consectetur. Ut a nunc id massa dignissim elementum at at felis.!</p>
+        <p className="results-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus, ante rutrum posuere, tortor ipsum semper tortor, non rhoncus sem eros ut nisl. Nunc et aliquet lacus, ac congue neque. Vestibulum diam augue, iaculis quis egestas cursus, iaculis a est. Pellentesque id commodo lorem. Cras nec vestibulum tellus. Nunc congue sapien nec venenatis consectetur. Ut a nunc id massa dignissim elementum at at felis.!</p>
       </div>
     );
   }
