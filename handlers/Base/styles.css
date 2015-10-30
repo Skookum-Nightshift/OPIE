@@ -12,11 +12,10 @@ body {
     background-size: cover;
 }
 
-#app {
+.AppBase {
     max-width: 1200px; 
     margin: 0 auto;
-    height:100%;
-    /*background-color: #9FA8DA; /*200*/
+    min-height: 100%;
 }
 .main-logo { text-align: center; margin-top: 10px; }
 

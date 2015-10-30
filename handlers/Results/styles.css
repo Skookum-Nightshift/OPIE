@@ -1,3 +1,27 @@
 /** @define NotFound; use strict */
 @import 'normalize.css';
 
+.Results {
+	text-align: center;
+}
+
+.img-resize {
+	height: auto; 
+    width: auto; 
+    max-width: 35%; 
+    max-height: 35%;
+}
+
+.Results-content {
+	background-color: white;
+	width: 100%;
+}
+
+.text-black {
+	max-width: 80%; 
+    margin: 0 auto;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 22px;
+}
