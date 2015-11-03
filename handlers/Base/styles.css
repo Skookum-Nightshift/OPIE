@@ -4,21 +4,31 @@
 body { 
     background-color: #5C6BC0;
     color: white;
-    height: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+#app {
     background-image: url('/public/img/splash-bg-indigo.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
-
-#app {
+.AppBase {
     max-width: 1200px; 
     margin: 0 auto;
     height:100%;
     /*background-color: #9FA8DA; /*200*/
 }
-.main-logo { text-align: center; margin-top: 10px; }
+
+.hidden { display:none; }
+
+
+
+
+.main-logo { text-align: center; }
 
 a { text-decoration: none; }
  a:visited { color: inherit; }

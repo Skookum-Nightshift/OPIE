@@ -2,3 +2,12 @@
     margin-bottom: 5px; 
     cursor: pointer; 
 } 
+
+.Question .deleteQuestion {
+    float:right;
+    color:#999;
+    margin-top: -5px;
+}
+    .Question .deleteQuestion:hover {
+        color:red;
+    }

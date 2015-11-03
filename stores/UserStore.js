@@ -15,14 +15,13 @@ class UserStore {
 
   handleUpdateUser(user) {
     this.user = user;
-    cookie.save('user', user, {
-      expires: new Date(user.auth_token_expiration)
-    });
+    cookie.save('user', user);
   }
 
   handleDeleteUser() {
     this.user = null;
     cookie.remove('user');
+    FB.logout();
   }
 }
 
