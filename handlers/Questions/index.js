@@ -103,17 +103,17 @@ class Questions extends React.Component {
     return (
       <div className="Questions">
         <div className="col-12">
-            <div className="content">
+            <div className="content add-question">
                 <h1> Content Management </h1>
                 <p className="CMS-description">This management system is where you add / delete questions.</p>
-                <Button type="indigo-tab" onClick={this.toggleAddQuestionForm}> 
-                    
+               
+                    <Button type="indigo-tab" onClick={this.toggleAddQuestionForm}> 
                     { this.state.showAddQuestionForm ?
                         <div><i className="fa fa-close"></i> Cancel</div>
                         : <div><i className="fa fa-edit"></i> Add Question</div>
                     }
-                </Button>
-
+                    </Button>
+                    
                 { this.state.showAddQuestionForm ? 
                     <Button type="indigo-tab" onClick={this.saveQuestion}><i className="fa fa-check-circle"></i> Save New Question </Button> : ""
                 }

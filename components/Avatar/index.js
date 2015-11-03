@@ -24,7 +24,7 @@ class Avatar extends React.Component {
         <div className="Avatar" onMouseEnter={this.toggleSettings} onMouseLeave={this.toggleSettings}>
             <img src={user.profileImage} />
             <div className="Avatar__name">
-                { this.state.showSettings ? (<span>Account Settings</span>) : (<span>Hello {user.firstName}! <i className="fa fa-cog"></i></span>) }
+                { this.state.showSettings ? (<p>Account Settings</p>) : (<p>Hello {user.firstName}! <i className="fa fa-cog"></i></p>) }
             </div>
         </div>
     );

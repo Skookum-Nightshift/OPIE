@@ -112,6 +112,14 @@ h1, h2, h3 {
 
     .CMS-description { text-align: center; }
     .Questions .question-form { text-align: center; }
+    .add-question { text-align: center; }
     h1, h2 { text-align: center; }
 
+    .Avatar__name { display: none; }
+    .Avatar { width: 50px; margin-right: 20px; }
+}
+
+@media only screen and (max-width: 450px) {
+    .main-logo { text-align: left; padding-top: 5px; }
+    .add-question { text-align: center; }
 }

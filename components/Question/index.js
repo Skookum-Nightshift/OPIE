@@ -11,11 +11,14 @@ class Question extends React.Component {
         this.state = {
             showAnswers: false,
             showDeleteButton: false,
+            showConfirmation: false,
+            maskColor: 'inherit',
         };
 
         this.toggleAnswers = this.toggleAnswers.bind(this);
         this.toggleDelete = this.toggleDelete.bind(this);
         this.deleteQuestion = this.deleteQuestion.bind(this);
+        this.deleteConfirmation = this.deleteConfirmation.bind(this);
     }
 
     toggleAnswers() {
@@ -26,10 +29,17 @@ class Question extends React.Component {
         this.setState({ showDeleteButton: !this.state.showDeleteButton });
     }
 
+    deleteConfirmation(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.setState({ showConfirmation: true });
+    }
+
     deleteQuestion(e) {
         e.stopPropagation(); // prevents events from event bubbling
-        // TODO: delete item in  parse
+        // TODO: delete item in parse
         this.props.itemDeleted(this.props.index);
+        this.setState({ showConfirmation: false }); 
     }
 
 
@@ -40,7 +50,9 @@ class Question extends React.Component {
         <div className="Question" onClick={this.toggleAnswers} onMouseEnter={this.toggleDelete} onMouseLeave={this.toggleDelete}> 
             <div className="question-block content">  
                 <span className="question-circle"><div className="question-number">{Order}</div></span> 
-                { this.state.showDeleteButton ? <span className="deleteQuestion" onClick={this.deleteQuestion}><i className="fa fa-close fa-2x"></i></span> : ''}
+                
+                { this.state.showDeleteButton ? <span className="deleteQuestion" onClick={this.deleteConfirmation}><i className="fa fa-close fa-2x"></i></span> : ''}
+                { this.state.showConfirmation ? <p className="deleteConfirmation"> Confirm Deletion: <i className="fa fa-check fa-2x" onClick={this.deleteQuestion} ></i></p> : ''}
                 <p>{Content}</p>
 
             </div>
