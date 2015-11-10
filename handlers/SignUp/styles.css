@@ -7,8 +7,7 @@
 }
 
 .signup-content {
-    padding: 0 20px;
-    padding-bottom: 20px;
+    padding: 25px 20px 20px 20px;
 }
     .signup-content h1 { color: #3F51B5;}
     .signup-content p { line-height: 22px; color:#777;}
