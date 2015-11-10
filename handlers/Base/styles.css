@@ -40,7 +40,7 @@ body {
 .main-logo { text-align: left; 
     height:95px; 
 }
-    .main-logo img { width: 200px; margin-top: 15px; }
+    .main-logo img { width: 200px; margin-top: 12px; }
 
 a { text-decoration: none; }
  a:visited { color: inherit; }

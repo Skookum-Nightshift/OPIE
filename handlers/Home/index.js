@@ -21,7 +21,7 @@ class Home extends React.Component {
   render(): ?ReactElement {
     return (
       <div className="Home">
-        
+        <h1> Welcome to Pathseer </h1>
         
         <p className="home-content">Explore career paths that suits your interests using our interactive quiz. 
         Use your results to connect with professional mentors and begin planning your future!</p>
