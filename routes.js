@@ -22,10 +22,7 @@ var routes = (
     <NotFoundRoute handler={NotFound} />
 
     <Route path="/signup" name="SignUp" handler={SignUp} />
-
-    
     <Route path="/results" name="Results" handler={Results} />
-
     <Route path="/quiz" name="Quiz" handler={Quiz} />
     <Route path="/questions" name="Questions" handler={Questions} />
 

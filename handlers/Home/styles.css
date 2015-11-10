@@ -5,7 +5,59 @@
 
 .Home p { 
     padding: 0 5%;
-    line-height: 22px; 
+    line-height: 36px;
+    font-size: 18px;  
+    transition: all ease-in-out .3s;
+}
+
+.Home-login {
+    margin: 0 auto;
+    border: 1px solid white;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 10px; 
+    padding-top: 15px;
+    padding-bottom: 15px; 
+    transition: all ease-in-out .3s;
+}
+    .Home-login:active {
+        box-shadow: 0px 0px 20px #333;
+    }
+    .Home-login-btn { 
+        width: 49%; 
+        display: inline-block; 
+        vertical-align: middle;
+        padding: 10px 0px;
+    }
+        .Home-login-btn:hover {
+            cursor: pointer;
+        }
+
+    
+    .Home-login-btn span { 
+        letter-spacing: 1px; 
+        color:#777;
+        font-weight: bolder;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 32px;
+        vertical-align: middle;
+    }
+        .Home-login-btn span:hover { 
+            color: #5C6BC0; 
+            transition: all .5s ease-in-out;
+        }
+    
+    .Home-login div:last-child {
+        border-left: 1px solid #aaa;
+    }
+
+.Home-container {
+    margin: 0 auto;
+    padding-top: 10%;
+    max-width:600px; 
 }
 
 .home-content { margin-bottom: 30px; }
+

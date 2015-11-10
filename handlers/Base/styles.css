@@ -110,12 +110,17 @@ h1, h2, h3 {
 .col-12 {width: 100%;}
 [class*='col-'] { display: inline-block; vertical-align: top;}
 
+@media only screen and (max-width: 1200px) {
+    .main-logo { padding-left: 20px; }
+    .Avatar { margin-right: 20px; }
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     body { }
     [class*="col-"] {
         width: 100%;
     }
+    .main-logo { padding-left: 20px; }
     .SignUp { margin:15px !important;}
     .signup-form Button { width: 100%; }
     .signup-content { text-align: center; }
@@ -129,9 +134,12 @@ h1, h2, h3 {
 
     .Avatar__name { display: none; }
     .Avatar { width: 50px; margin-right: 20px; }
+    .Avatar__image img:hover {
+        visibility: hidden;
+        display:none;
+    }
 }
 
 @media only screen and (max-width: 450px) {
-    .main-logo { text-align: left; padding-top: 5px; }
     .add-question { text-align: center; }
 }

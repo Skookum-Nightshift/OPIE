@@ -6,18 +6,29 @@ import React from 'react';
 var {PropTypes} = React;
 
 class Answer extends React.Component {
+
+  constructor() {
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.onSelected(this.props.item);
+  }
+
   render(): ?ReactElement {
 
-    var {children, type, ...props} = this.props,
+    var {type, item} = this.props,
         className = `quiz-button qb-${type}`;
 
     return (
-      <div className="col-6">
-            <div className="quiz-content">
-            <div className={className}>
-                <p>Answer</p> 
-                
-            </div></div>
+      <div className="col-6" onClick={this.handleClick}>
+        <div className="quiz-content">
+          <div className={className}>
+            <p>{item}</p> 
+          </div>
+        </div>
       </div>
     );
   }

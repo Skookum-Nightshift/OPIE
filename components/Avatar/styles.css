@@ -17,13 +17,22 @@
     }
     .Avatar:active { background-color: #ddd; }
 
-.Avatar img {
+.Avatar__image {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 25px;
+    border: 5px solid #5C6BC0;
+    z-index: 1;
+    float:left;
+    margin-right: 10px;
+}
+
+.Avatar__image img {
     width: 40px;
     height: 40px;
     border-radius: 25px;
-    border: 5px solid #5C6BC0;
-    float:left;
-    margin-right: 10px; 
+    z-index: 2;
 }
 .Avatar__name {
     margin-left: 10px;

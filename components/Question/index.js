@@ -32,7 +32,7 @@ class Question extends React.Component {
     deleteConfirmation(e) {
         e.stopPropagation();
         e.preventDefault();
-        this.setState({ showConfirmation: true });
+        this.setState({ showConfirmation: !this.state.showConfirmation });
     }
 
     deleteQuestion(e) {
