@@ -26,14 +26,16 @@ class AppBase extends React.Component {
     render(): ?ReactElement {
     
     return (
-      <div className="AppBase">
-      <div className="header">
-        <div className="main-logo"><a href="/"><img src="./public/img/logo.png" /></a></div>
-       { this.state.user ?  <Avatar user={this.state.user}/> : '' }
-      </div>
-
+      <div>
+        <div className="header">
+          <div className="container">
+            <div className="main-logo"><a href="/"><img src="./public/img/logo.png" /></a></div>
+            { this.state.user ?  <Avatar user={this.state.user}/> : '' }
+          </div>
+        </div>
+        <div className="AppBase">
             <RouteHandler />
-        
+        </div>
       </div>
     );
   }

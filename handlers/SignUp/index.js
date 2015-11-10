@@ -42,7 +42,7 @@ constructor() {
                 </div>
 
                 <Button type="indigo" onClick={() => {this.context.router.transitionTo('Quiz');}}> Continue </Button>
-                <p> or sign up using Facebook </p>
+                <p> or sign up using Facebook to track your stats</p>
                 
                 <SignUpFB />
                 
