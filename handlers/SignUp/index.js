@@ -7,8 +7,23 @@ import React from 'react';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
 import SignUpFB from 'SignUpFB';
+import UserStore from '../../stores/UserStore';
 
 class SignUp extends React.Component {
+constructor() {
+        super();
+        this.state = { user: UserStore.getState().user };
+  }
+
+  componentDidMount() {
+        if (this.state.user) { 
+            this.context.router.transitionTo("home");
+        }
+        UserStore.listen((state) => {
+          this.setState({ user: state.user });
+        });
+    }
+
   render(): ?ReactElement {
     return (
       <div className="SignUp">
@@ -21,14 +36,16 @@ class SignUp extends React.Component {
 
         <div className="col-6"> 
             <div className="signup-content">  
-                <div className="signup-form">
+                <div className="signup-form hidden">
                     <input type="text" placeholder="Name" className="form-content"/><br/>
-                    <input type="text" placeholder="Email" className="form-content"/><br/>
-                    <Button type="indigo" onClick={() => {this.context.router.transitionTo('Quiz');}}> Continue </Button>
+                    <input type="text" placeholder="Email" className="form-content"/><br/>       
                 </div>
-                <p> or sign up using Facebook or Twitter </p>
+
+                <Button type="indigo" onClick={() => {this.context.router.transitionTo('Quiz');}}> Continue </Button>
+                <p> or sign up using Facebook </p>
+                
                 <SignUpFB />
-                <Button type='twitter'><i className="fa fa-twitter"></i></Button>
+                
             </div>
             
         </div>    

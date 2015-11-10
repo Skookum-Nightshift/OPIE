@@ -4,20 +4,34 @@
 body { 
     background-color: #5C6BC0;
     color: white;
-    height: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+#app {
     background-image: url('/public/img/splash-bg-indigo.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .AppBase {
     max-width: 1200px; 
     margin: 0 auto;
     min-height: 100%;
 }
-.main-logo { text-align: center; margin-top: 10px; }
+
+.hidden { display:none; }
+
+
+
+
+.main-logo { text-align: center; }
 
 a { text-decoration: none; }
  a:visited { color: inherit; }
@@ -101,6 +115,14 @@ h1, h2, h3 {
 
     .CMS-description { text-align: center; }
     .Questions .question-form { text-align: center; }
+    .add-question { text-align: center; }
     h1, h2 { text-align: center; }
 
+    .Avatar__name { display: none; }
+    .Avatar { width: 50px; margin-right: 20px; }
+}
+
+@media only screen and (max-width: 450px) {
+    .main-logo { text-align: left; padding-top: 5px; }
+    .add-question { text-align: center; }
 }

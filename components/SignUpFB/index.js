@@ -6,76 +6,66 @@ require('./styles.css');
 import React from 'react';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
+import UserActions from '../../actions/UserActions';
+import UserStore from '../../stores/UserStore';
 
 class SignUp extends React.Component {
 
+    constructor() {
+      super();
+
+      this.state = {
+        user: UserStore.getState().user
+      }
+
+      this.getProfileImage = this.getProfileImage.bind(this);
+      this.loginToFacebook = this.loginToFacebook.bind(this);
+      this.getProfile = this.getProfile.bind(this);
+    }
+
+    componentDidMount() {
+        UserStore.listen((state) => {
+          this.setState({ user: state.user });
+        });
+    }
+
     loginToFacebook() {
 
-        
-        // init the FB JS SDK
-        Parse.FacebookUtils.init({
-          appId      : '964785910226704',                        // App ID from the app dashboard
-          // channelUrl : '//localhost.local/XXXXX/channel.html', // Channel file for x-domain comms
-          status     : true,                                 // Check Facebook Login status
-          xfbml      : true,                                  // Look for social plugins on the page
-          logging    : true,
-          version    : 'v2.5'
-        });
-
         Parse.FacebookUtils.logIn(null, {
-            success: function(user) {
+            success: (user) => {
                 if (!user.existed()) {
 
                     alert("User signed up and logged in through Facebook!");
 
                 } else {
 
-                    alert("User logged in through Facebook!");
-                    var currentUser = Parse.User.current();
-                    // var test = JSON.stringify(currentUser);
-
-                    // var userinfo = eval ("(" + test + ")");
-                    // alert(test);
-                    
-                    if (currentUser) {
-                        
-                            alert("Welcome " + currentUser.name + ": Your UID is " + currentUser.id + " " + currentUser.firstName); 
-                        
-                    }
+                    this.getProfile();
 
                 }
             },
-            error: function(user, error) {
+            error: (user, error) => {
                 alert("User cancelled the Facebook login or did not fully authorize.");
             }
         });
 
     }
 
+    getProfile() {
+      FB.api("/me",  (response) => {
+        UserActions.updateUser({ firstName: response.name.split(' ')[0], lastName: response.name.split(' ')[1] });
+        this.getProfileImage();
+      }); 
+    }
+
     getProfileImage() {
-        var $photo = $('.photo'),
-        $btn = $('.btn-fb'),
-        $fbPhoto = $('img.fb-photo');
- 
-        //uploading
-        $btn.text('Uploading...');
- 
-        FB.api("/me/picture?width=180&height=180",  function(response) {
-     
-            var profileImage = response.data.url.split('https://')[1], //remove https to avoid any cert issues
-                randomNumber = Math.floor(Math.random()*256);
-     
-           //remove if there and add image element to dom to show without refresh
-           if( $fbPhoto.length ){
-               $fbPhoto.remove();
-           }
-             //add random number to reduce the frequency of cached images showing
-           $photo.append('<img class=\"fb-photo img-polaroid\" src=\"http://' + profileImage + '?' + randomNumber + '\">');
-            $btn.addClass('hide');
+      FB.api("/me/picture?width=180&height=180",  (response) => {
+          var profileImage = response.data.url.split('https://')[1], //remove https to avoid any cert issues
+            url = 'http://' + profileImage,
+            user = this.state.user;
 
-        }); 
-
-        alert("User logged in through Facebook! and we got an image");
+          user.profileImage = url;
+          UserActions.updateUser(user);
+      }); 
     }
 
     render(): ?ReactElement {

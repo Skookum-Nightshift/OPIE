@@ -24,4 +24,13 @@
     padding-top: 20px;
     padding-bottom: 20px;
     line-height: 22px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.bb {
+    color: black;
+    text-align: left;
+    padding-top: 1%;
+    margin-bottom: 1%;
 }

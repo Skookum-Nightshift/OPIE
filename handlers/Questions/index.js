@@ -15,17 +15,32 @@ class Questions extends React.Component {
         super();
         this.state = {
             showAddQuestionForm: false,
+            lastOrder: 0,
             answer1: "",
             answer2: "",
             answer3: "",
             answer4: "",
-            question: ""
+            question: "",
+            items: []
         };
 
         this.toggleAddQuestionForm = this.toggleAddQuestionForm.bind(this);
         this.updateState = this.updateState.bind(this);
         this.saveQuestion = this.saveQuestion.bind(this);
         this.clearQuestionFields = this.clearQuestionFields.bind(this);
+        this.getQuestions = this.getQuestions.bind(this);
+        this.handleDeleted = this.handleDeleted.bind(this);
+    }
+
+    componentDidMount() {
+        // function called after render
+        this.getQuestions();
+    }
+
+     handleDeleted(index) {
+        var {items} = this.state;
+        items.splice(index, 1);
+        this.setState({ items });
     }
 
     toggleAddQuestionForm() {
@@ -38,7 +53,23 @@ class Questions extends React.Component {
         this.setState(state);
     }
     clearQuestionFields() {
-        this.setState({ question: '', answer1: '', answer2: '', answer3: '', answer4: '' });
+        this.setState({ question: '', answer1: '', answer2: '', answer3: '', answer4: '',showAddQuestionForm: false });
+    }
+
+    getQuestions() {
+        var QuestionListItem = Parse.Object.extend("Question");
+        var query = new Parse.Query(QuestionListItem);
+        query.find({
+            success: (results) => { // arrow functions
+                var items = results.map(result => result.attributes ).sort((itemA, itemB) => {
+                    return itemA.Order - itemB.Order;
+                });
+                this.setState({ items, lastOrder: items[items.length-1].Order });
+            }, 
+            error: function(error) {
+                alert("Query Error: " + error.message);
+            }
+        });
     }
 
     saveQuestion() {
@@ -51,11 +82,14 @@ class Questions extends React.Component {
         newQuestion.set("Answer2", answer2);
         newQuestion.set("Answer3", answer3);
         newQuestion.set("Answer4", answer4);
+        newQuestion.set("Order", this.state.lastOrder + 1);
 
         newQuestion.save(null, {
           success: (newQuestion) => {
             // resetting the field
             this.clearQuestionFields();
+            this.getQuestions();
+
           },
           error: function(newQuestion, error) {
             // Execute any logic that should take place if the save fails.
@@ -69,17 +103,17 @@ class Questions extends React.Component {
     return (
       <div className="Questions">
         <div className="col-12">
-            <div className="content">
+            <div className="content add-question">
                 <h1> Content Management </h1>
                 <p className="CMS-description">This management system is where you add / delete questions.</p>
-                <Button type="indigo-tab" onClick={this.toggleAddQuestionForm}> 
-                    
+               
+                    <Button type="indigo-tab" onClick={this.toggleAddQuestionForm}> 
                     { this.state.showAddQuestionForm ?
                         <div><i className="fa fa-close"></i> Cancel</div>
                         : <div><i className="fa fa-edit"></i> Add Question</div>
                     }
-                </Button>
-
+                    </Button>
+                    
                 { this.state.showAddQuestionForm ? 
                     <Button type="indigo-tab" onClick={this.saveQuestion}><i className="fa fa-check-circle"></i> Save New Question </Button> : ""
                 }
@@ -88,22 +122,17 @@ class Questions extends React.Component {
                     <div className="question-tab">  
                         <div className="question-form">
                             <Input type="text" placeholder="Type Question" value={this.state.question} name="question" onInputChange={this.updateState} />
-                            <Input type="text" placeholder="Type Answer 1:" value={this.state.answer1} name="answer1" onInputChange={this.updateState} />
-                            <Input type="text" placeholder="Type Answer 2:" value={this.state.answer2} name="answer2" onInputChange={this.updateState} />
-                            <Input type="text" placeholder="Type Answer 3:" value={this.state.answer3} name="answer3" onInputChange={this.updateState} />
-                            <Input type="text" placeholder="Type Answer 4:" value={this.state.answer4} name="answer4" onInputChange={this.updateState} />                    
+                            <Input type="text" placeholder="Type Answer 1:" defaultValue={this.state.answer1} name="answer1" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 2:" defaultValue={this.state.answer2} name="answer2" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 3:" defaultValue={this.state.answer3} name="answer3" onInputChange={this.updateState} />
+                            <Input type="text" placeholder="Type Answer 4:" defaultValue={this.state.answer4} name="answer4" onInputChange={this.updateState} />                    
                         </div>
                     </div>
                 ) : '' }  
             </div>
         </div>
 
-        
-
-        <QuestionList />
-
-            
-
+        <QuestionList items={this.state.items} itemDeleted={this.handleDeleted} />
                     
         <RouteHandler />
       </div>

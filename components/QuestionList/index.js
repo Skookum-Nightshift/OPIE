@@ -16,30 +16,10 @@ class QuestionList extends React.Component {
 
         // this.renderListItem = this.renderListItem.bind(this);
         // if you want to bind
-        this.getQuestions = this.getQuestions.bind(this);
     }
-
-    componentDidMount() {
-        // function called after render
-        this.getQuestions();
-    }
-
-    getQuestions() {
-        var QuestionListItem = Parse.Object.extend("Question");
-        var query = new Parse.Query(QuestionListItem);
-        query.find({
-            success: (results) => { // arrow functions
-                this.setState({ items: results.map(result => result.attributes ) });
-            }, 
-            error: function(error) {
-                alert("Query Error: " + error.message);
-            }
-        });
-    }
-
-
+    
     renderListItem(items) {
-        return items.map(item => <Question item={item} /> );
+        return items.map((item, index) => <Question key={item.id} item={item} itemDeleted={this.props.itemDeleted} index={index} /> );
         // return items.map((item) => {
         //     return (
         //         <Question item={item} />
@@ -51,7 +31,7 @@ class QuestionList extends React.Component {
     return (
         <div className="QuestionList content"> 
             <h2> Current Questions </h2>
-            {this.renderListItem(this.state.items)}
+            {this.renderListItem(this.props.items)}
         </div>   
     );
   }
