@@ -52,6 +52,7 @@ class Questions extends React.Component {
         state[name] = value;
         this.setState(state);
     }
+    
     clearQuestionFields() {
         this.setState({ question: '', answer1: '', answer2: '', answer3: '', answer4: '',showAddQuestionForm: false });
     }

@@ -21,6 +21,27 @@ class Quiz extends React.Component {
 
     this.getQuestions = this.getQuestions.bind(this);
     this.handleSelected = this.handleSelected.bind(this);
+    this.saveSelectedAnswers = this.saveSelectedAnswers.bind(this);
+  }
+
+  saveSelectedAnswers() {
+    let { selectedAnswers } = this.state;
+    var selectAnswer = Parse.Object.extend("SelectedAnswers");
+    var newSelectAnswer = new selectAnswer();
+    var user = Parse.User.current();
+    console.log(user);
+    newSelectAnswer.set("user", user );
+    newSelectAnswer.set("selectedAnswers", selectedAnswers); 
+
+    newSelectAnswer.save(null, {
+      success: (newSelectAnswer) => {
+        // resetting the field
+        console.log('success');
+      }, error: function(newSelectAnswer, error) {
+        alert('Failed to save Selected Answers, with error code: ' + error.message);
+      }
+    });
+
   }
 
   componentDidMount() {
@@ -37,6 +58,7 @@ class Quiz extends React.Component {
     if (currentIndex+1 === questions.length) {
       this.context.router.transitionTo('Results');
       // results selectedAnswers
+      this.saveSelectedAnswers();
     }
   }
 
