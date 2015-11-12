@@ -1,6 +1,5 @@
 .Home {
     text-align: center;
-    margin-top: 20px;
 }
 
 .Home p { 
@@ -58,6 +57,13 @@
     padding-top: 10%;
     max-width:600px; 
 }
+    .Home-container h1 {
+        font-size: 3.5em; 
+        transition: all .3s ease-in-out;
+    }
 
-.home-content { margin-bottom: 30px; }
+.home-content { 
+    margin-bottom: 50px; 
+    margin-top:40px;
+}
 

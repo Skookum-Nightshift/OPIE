@@ -91,16 +91,21 @@ class Quiz extends React.Component {
 
     return (
       <div className="Quiz">
-        
+        <div className="container">
+          <div className="radial-container"><RadialLoader progress={percent}/></div>
+          <div className="previous-button"><a href="/signup" onClick={() => {this.context.router.transitionTo('SignUp');}}><i className="fa fa-arrow-left"></i> Previous Question </a></div>
+          
+          <p className="current-question">{Content}</p>
 
-        <p className="previous-button"><a href="/signup" onClick={() => {this.context.router.transitionTo('SignUp');}}><i className="fa fa-arrow-left"></i> Previous Question </a> 
-            <span className="current-question"> Current Question: {Content} </span>
-        </p>
-        
-        <br clear="all" />
-        <AnswerGroup answers={answers} onAnswerSelected={this.handleSelected} />
-        <RadialLoader progress={percent}/>            
-        <RouteHandler />
+          <br clear="all" />
+
+            
+
+          <AnswerGroup answers={answers} onAnswerSelected={this.handleSelected} />
+                   
+          <RouteHandler />
+
+        </div>
       </div>
     );
   }

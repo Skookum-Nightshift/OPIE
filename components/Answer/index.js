@@ -23,13 +23,13 @@ class Answer extends React.Component {
         className = `quiz-button qb-${type}`;
 
     return (
-      <div className="col-6" onClick={this.handleClick}>
-        <div className="quiz-content">
+      
+        <div className="quiz-content" onClick={this.handleClick}>
           <div className={className}>
             <p>{item}</p> 
           </div>
         </div>
-      </div>
+      
     );
   }
 }

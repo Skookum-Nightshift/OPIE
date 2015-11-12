@@ -2,26 +2,53 @@
 @import 'normalize.css';
 
 .Quiz {
-    background-color:white;
-    height: 100vh;
-    max-height: 100%;
+    background-color: #dededd;
+    
+    width: 100vw;
+    height: 100%;
     color:#777;
-    padding:5px;
 }
-.previous-button { padding-left:5px; }
-.previous-button:hover { }
-.current-question { float:right; padding-right: 5px;}
+    .Quiz .container { padding-top: 100px; }
+
+.previous-button { 
+    background-color: white;
+    padding: 10px;
+    width: 125px; 
+    text-transform: uppercase; 
+    font-size: 10px; 
+}
+.previous-button:hover { 
+    background-color: #5C6BC0;
+    color: white;
+    transition: all ease-in-out .2s;
+}
+
+.radial-container { float: right; }
+
+
+.current-question { 
+    margin: 0 auto; 
+    padding: 20px 0; 
+    font-size: 30px; 
+    line-height: 36px; 
+}
 .quiz-content { 
-    height: 45vh; 
-    padding:5px;
+    height: 150px; 
+    padding:0px;
+    margin-bottom: 20px; 
 }
 
 .quiz-button {
     background-color: #9FA8DA;
     height: 100%;
-    text-align: center;
+    align-items: center;
+    text-align: center; 
+    display: flex;
 }
-    .quiz-button p { padding-top: 20px; margin-top: 0px; }
+    .quiz-button p { 
+        padding: 20px;
+        margin: 0 auto; 
+    }
 
 .qb-1 { background-color: #FFF8E1;}
 .qb-2 { background-color: #FCE4EC;}

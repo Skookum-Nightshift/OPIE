@@ -12,7 +12,7 @@ class AnswerGroup extends React.Component {
   render(): ?ReactElement {
 
     return (
-      <div>
+      <div className="AnswersContainer">
         {this.props.answers.map((answer, index)=>{
           return <Answer type={index+1} item={answer} onSelected={this.props.onAnswerSelected}/>;
         })}

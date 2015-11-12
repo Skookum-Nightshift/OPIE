@@ -1,77 +1,14 @@
-/** @define Button; use strict */
-
-.Button {
-    padding: 10px 25px;
-    background-color: initial;
-    transition: all .2s ease-in;
+.AnswersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.Button.is-black {
+.AnswersContainer .quiz-content {
+    flex-basis: 49%; 
 }
 
-.Button.is-pink {
+@media only screen and (max-width: 1200px) {
+    .AnswersContainer { margin: 0 20px; }
+    .AnswersContainer .quiz-content { flex-basis: 100%; }
 }
-
-.Button.is-grey {
-}
-
-.Button.is-white {
-    border: 1px solid white;
-    color:white;
-}
-
-.Button.is-indigo {
-    border: 1px solid #3F51B5;
-    color:white;
-    background-color: #3F51B5;
-}
-.Button.is-facebook { 
-    border: 1px solid #3b5998;
-    background-color: #3b5998; 
-    color:white;
-    min-width: 150px;
-}
-.Button.is-twitter { 
-    border: 1px solid #4099FF;
-    background-color: #4099FF;
-    color:white;
-    min-width: 150px;
-}
-
-
-
-
-.Button.is-black:hover {
-}
-
-.Button.is-pink:hover {
-}
-
-.Button.is-grey:hover {
-}
-
-.Button.is-white:hover {
-    color: #87C7E9 !important; 
-    background-color: white;
-}
-
-.Button.is-indigo:hover {
-    border: 1px solid #3F51B5;
-    color:#3F51B5;
-    background-color: white;
-}
-
-.Button.is-facebook:hover { 
-    border: 1px solid #3b5998;
-    background-color: white; 
-    color:#3b5998;
-    min-width: 150px;
-}
-
-.Button.is-twitter:hover { 
-    border: 1px solid #4099FF;
-    background-color: white;
-    color:#4099FF;
-    min-width: 150px;
-}
-

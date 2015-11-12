@@ -3,32 +3,30 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 
 .RadialLoader {
-  margin: auto auto;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   background-color: #d6dadc;
   border-radius: 50%;
-
   position: relative;
-  top:-53vh;
+  margin: 5px 15px 20px 20px; 
 }
 
 
 .RadialLoader .circleLoaderBase {
-  width: 140px;
-  height: 140px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
-  top:-10px;
-  left:-10px;
+  top:-5px;
+  left:-5px;
 }
 
 .RadialLoader .circle .mask,
 .RadialLoader .circle .fill,
 .RadialLoader .circle .shadow {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   border-radius: 50%;
 }
@@ -47,17 +45,17 @@
 }
 
 .RadialLoader .circle .mask {
-  clip: rect(0px, 120px, 120px, 60px);
+  clip: rect(0px, 100px, 100px, 50px);
 }
 
 .RadialLoader .circle .mask .fill {
-  clip: rect(0px, 60px, 120px, 0px);
+  clip: rect(0px, 50px, 100px, 0px);
   background-color:  #5C6BC0;
 }
 
 .RadialLoader .inset {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   margin-left: 10px;
   margin-top: 10px;
@@ -71,9 +69,9 @@
   top: 32px;
   left: 0px;
   right: 0;
-  font-size: 14px;
+  font-size: 10px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #97a71d;
+  color: #636a93;
   text-align: center;
 }
 
@@ -83,7 +81,7 @@
   overflow: hidden;
   position: absolute;
   top: 50px;
-  left: 25.5px;
+  left: 13px;
   line-height: 1;
 }
 
@@ -99,8 +97,123 @@
   font-weight: 800;
   font-size: 15px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #97a71d;
+  color: #5C6BC0;
 }
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .RadialLoader {
+      width: 60px;
+      height: 60px;
+      background-color: #d6dadc;
+      border-radius: 50%;
+      position: relative;
+      margin: 0px 10px 20px 20px; 
+    }
+
+
+    .RadialLoader .circleLoaderBase {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top:0px;
+      left:0px;
+      border: 1px dotted #5C6BC0;
+    }
+
+    .RadialLoader .circle .mask,
+    .RadialLoader .circle .fill,
+    .RadialLoader .circle .shadow {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .RadialLoader .circle .shadow {
+      box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
+
+    }
+
+    .RadialLoader .circle .mask,
+    .RadialLoader .circle .fill {
+      -webkit-backface-visibility: hidden;
+      transition: -webkit-transform 1s;
+      transition: -ms-transform 1s;
+      transition: transform 1s;
+      border-radius: 50%;
+    }
+
+    .RadialLoader .circle .mask {
+      clip: rect(0px, 70px, 70px, 35px);
+    }
+
+    .RadialLoader .circle .mask .fill {
+      clip: rect(0px, 35px, 70px, 0px);
+      background-color:  #5C6BC0;
+    }
+
+    .RadialLoader .inset {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      margin-left: 10px;
+      margin-top: 10px;
+      background-color: #fbfbfb;
+      border-radius: 50%;
+      box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .RadialLoader .inset .message {
+      display: none;
+      position: absolute;
+      top: 32px;
+      left: 0px;
+      right: 0;
+      font-size: 10px;
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #636a93;
+      text-align: center;
+    }
+
+    .RadialLoader .inset .percentage {
+      height: 15px;
+      width: 57px;
+      overflow: hidden;
+      position: absolute;
+      top: 16px;
+      left: -2px;
+      line-height: 1;
+    }
+
+    .RadialLoader .inset .percentage .numbers {
+      margin-top: -15px;
+      transition: width 1s;
+    }
+    .RadialLoader .inset .percentage .numbers span {
+      width: 57px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      font-weight: 800;
+      font-size: 15px;
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #5C6BC0;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .RadialLoader[data-progress="0"] .circle .mask.full,
 .RadialLoader[data-progress="0"] .circle .fill {

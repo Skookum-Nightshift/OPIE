@@ -1,5 +1,6 @@
 /** @define AppBase; use strict */
 @import 'normalize.css';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic|Open+Sans+Condensed:300);
 
 body { 
     background-color: #5C6BC0;
@@ -7,7 +8,13 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
+p { font-family: 'Open Sans', sans-serif; }
+h1,h2,h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 
 #app {
     background-image: url('/public/img/splash-bg-indigo.jpg');
@@ -22,17 +29,19 @@ body {
     max-width: 1200px; 
     margin: 0 auto;
 }
+
+
 .header { 
     width:100vw; 
     height:80px;
     background-color: white;
+    position: absolute;
 }
 
 
 .AppBase {
-    max-width: 1200px; 
     margin: 0 auto;
-    height:100%;
+    height:100vh;
     /*background-color: #9FA8DA; /*200*/
 }
 
@@ -113,6 +122,8 @@ h1, h2, h3 {
 @media only screen and (max-width: 1200px) {
     .main-logo { padding-left: 20px; }
     .Avatar { margin-right: 20px; }
+    .radial-container { margin-right: 20px; }
+    .Quiz p.current-question { padding-left: 20px; }
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
@@ -137,6 +148,12 @@ h1, h2, h3 {
     .Avatar__image img:hover {
         visibility: hidden;
         display:none;
+    }
+
+    /* Welcome Page */
+    .Home .Home-container h1 {
+        font-size: 2em; 
+        margin-top: 100px;
     }
 }
 
