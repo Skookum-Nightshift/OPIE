@@ -28,6 +28,13 @@
     background-color: #3F51B5;
 }
 
+.Button.is-navi {
+    border: 0px; 
+    border-bottom: 1px solid white;
+    color:white;
+    background-color: #999;
+}
+
 .Button.is-indigo-tab {
     border: 0px solid #3F51B5;
     color:white;
@@ -68,6 +75,15 @@
     border: 1px solid #3F51B5;
     color:#3F51B5;
     background-color: white;
+}
+
+.Button.is-navi:hover {
+    border-bottom: 1px solid white;
+    color:white;
+    background-color: #555;
+}
+.Button.is-navi:active {
+    background-color: #3F51B5;
 }
 
 .Button.is-indigo-tab:hover {

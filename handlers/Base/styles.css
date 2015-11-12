@@ -124,6 +124,7 @@ h1, h2, h3 {
     .Avatar { margin-right: 20px; }
     .radial-container { margin-right: 20px; }
     .Quiz p.current-question { padding-left: 20px; }
+    .SideNavigation__wrapper { padding-left: 20px; }
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */

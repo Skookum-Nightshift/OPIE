@@ -1,3 +1,89 @@
 /** @define NotFound; use strict */
 @import 'normalize.css';
 
+.Results {
+    height: 100vh;
+    background-color: white;
+}
+
+.SideNavigation__wrapper {
+
+} 
+
+.SideNavigation__buttons {
+    position: absolute;
+    top: 180px;
+    color: white;
+    width:120px;
+    height:300px;
+    background-color: #999;
+    display: flex;
+    flex-direction: column;
+}
+    .SideNavigation__buttons button {
+        flex:1;
+    }
+
+.ShareResults__desktop {
+    top: 500px;
+    position: absolute;
+    color: #5C6BC0;
+}
+    .ShareResults__desktop p { 
+        font-size: 10px; 
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+.ShareResults__facebook,
+.ShareResults__twitter {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color:white;
+    background-color: #5C6BC0;
+    text-align: center;
+    float:left;
+    margin-right: 10px;
+}
+    .ShareResults__twitter { background-color: #4099FF; }
+
+.ShareResults__facebook i.fa,
+.ShareResults__twitter i.fa {
+    margin-top: 5px;
+}
+
+
+.Results__image {
+    height: 400px;
+    background-image: url('/public/img/splash-bg-indigo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.Results__wrapper {
+    background-color: white;
+    color: #333;
+}
+
+.Results__wrapper .container {
+    text-align: center;
+}
+.Results__wrapper .container h1 {
+    margin-bottom: 5px; 
+}
+.Results__wrapper .container p {
+    margin-bottom: 5px; 
+    line-height: 24px; 
+}
+.Results__wrapper .container h4 {
+    color: #aaa;
+    font-weight: normal;
+    letter-spacing: 1px; 
+    margin-top: 0;
+}
+
+.results-content {
+    text-align: left;
+}

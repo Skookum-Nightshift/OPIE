@@ -95,7 +95,7 @@ class Quiz extends React.Component {
           <div className="radial-container"><RadialLoader progress={percent}/></div>
           <div className="previous-button"><a href="/signup" onClick={() => {this.context.router.transitionTo('SignUp');}}><i className="fa fa-arrow-left"></i> Previous Question </a></div>
           
-          <p className="current-question">{Content}</p>
+          <p className="current-question animated fadeInLeft">{Content}</p>
 
           <br clear="all" />
 

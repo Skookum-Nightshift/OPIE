@@ -20,7 +20,7 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['black', 'grey', 'pink', 'white', 'indigo','indigo-tab','facebook','twitter']),
+  type: PropTypes.oneOf(['black', 'grey', 'pink', 'white', 'indigo','navi','indigo-tab','facebook','twitter']),
   children: PropTypes.any.isRequired,
 };
 
