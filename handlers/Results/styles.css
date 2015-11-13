@@ -7,9 +7,12 @@
 }
 
 .SideNavigation__wrapper {
-
 } 
 
+.SideNavigation__wrapper-mobile { 
+    display: flex; 
+    width: 100%;
+}
 .SideNavigation__buttons {
     position: absolute;
     top: 180px;
@@ -20,9 +23,22 @@
     display: flex;
     flex-direction: column;
 }
+    .SideNavigation__buttons-mobile button,
     .SideNavigation__buttons button {
         flex:1;
+        cursor: pointer;
     }
+
+.SideNavigation__buttons-mobile {
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    height:100px;
+    background-color: #999;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
 
 .ShareResults__desktop {
     top: 500px;

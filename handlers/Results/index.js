@@ -39,6 +39,15 @@ class Results extends React.Component {
         </div>
       </div>
 
+      <div className="SideNavigation__wrapper-mobile mobile">
+        <div className="SideNavigation__buttons-mobile">
+          <Button type="navi">Resources</Button>
+          <Button type="navi">Retake?</Button>
+          <Button type="navi">Mentor</Button>  
+        </div>
+      </div>
+
+
       </div>
     );
   }
