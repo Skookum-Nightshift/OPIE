@@ -3,11 +3,12 @@
 
 require('./styles.css');
 
-import React from 'react';
+import React from 'react/addons';
 import {RouteHandler} from 'react-router';
 import Button from 'Button';
 import RadialLoader from 'RadialLoader';
 import AnswerGroup from 'AnswerGroup';
+let ReactTransition = React.addons.CSSTransitionGroup;
 
 class Quiz extends React.Component {
   constructor() {
@@ -22,6 +23,8 @@ class Quiz extends React.Component {
     this.getQuestions = this.getQuestions.bind(this);
     this.handleSelected = this.handleSelected.bind(this);
     this.saveSelectedAnswers = this.saveSelectedAnswers.bind(this);
+    this.getPreviousQuestion = this.getPreviousQuestion.bind(this);
+    this.restartQuiz = this.restartQuiz.bind(this);
   }
 
   saveSelectedAnswers() {
@@ -41,7 +44,6 @@ class Quiz extends React.Component {
         alert('Failed to save Selected Answers, with error code: ' + error.message);
       }
     });
-
   }
 
   componentDidMount() {
@@ -60,6 +62,16 @@ class Quiz extends React.Component {
       // results selectedAnswers
       this.saveSelectedAnswers();
     }
+  }
+
+  getPreviousQuestion() {
+    var {selectedAnswers, currentIndex, questions} = this.state;
+    selectedAnswers.pop();
+    this.setState({ selectedAnswers, currentIndex: currentIndex-1 });
+  }
+
+  restartQuiz() {
+    this.setState({ selectedAnswers: [], currentIndex: 0 });
   }
 
   getQuestions() {
@@ -84,22 +96,44 @@ class Quiz extends React.Component {
 
     if (!question) { return <div></div>; }
 
-    var {Content, Answer1, Answer2, Answer3, Answer4} = question;
-    var answers = [Answer1, Answer2, Answer3, Answer4];
+    var answers = [];
+    var percent = percent = ( 100 / questions.length ) * currentIndex;
+    var contentCom = '';
+    
+    if (question) {
+      var {Answer1, Answer2, Answer3, Answer4} = question;
+      answers = [Answer1, Answer2, Answer3, Answer4];
 
-    var percent = ( 100 / questions.length ) * currentIndex;
+      contentCom = (
+          <ReactTransition transitionName="fadeinright" transitionAppear={true} >
+            <p key={question.Order} className="current-question">{question.Content}</p>
+          </ReactTransition>
+      );
+    }
 
     return (
       <div className="Quiz">
         <div className="container">
           <div className="radial-container"><RadialLoader progress={percent}/></div>
-          <div className="previous-button"><a href="/signup" onClick={() => {this.context.router.transitionTo('SignUp');}}><i className="fa fa-arrow-left"></i> Previous Question </a></div>
           
-          <p className="current-question animated fadeInLeft">{Content}</p>
+          { percent !== 0 ? 
+            (
+              <div>
+                <div className="previous-button" onClick={this.getPreviousQuestion}>
+                  <i className="fa fa-angle-left"></i> Previous Question 
+                </div>
+                <div className="restart-button" onClick={this.restartQuiz}>
+                  <i className="fa fa-angle-double-left"></i> Restart Quiz
+                </div>
+              </div>
+            ) : 
+            (<div className="previous-button not-visible" ></div>) 
+          }
+          
+          {contentCom}
 
           <br clear="all" />
 
-            
 
           <AnswerGroup answers={answers} onAnswerSelected={this.handleSelected} />
                    

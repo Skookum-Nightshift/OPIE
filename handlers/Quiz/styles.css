@@ -10,28 +10,34 @@
 }
     .Quiz .container { padding-top: 100px; }
 
+.restart-button,
 .previous-button { 
     background-color: white;
     padding: 10px;
     width: 125px; 
     text-transform: uppercase; 
     font-size: 10px; 
+    display: inline-block;
+    border-right: 1px solid #dededd; 
+    text-align: center; 
 }
+.restart-button:hover, 
 .previous-button:hover { 
     background-color: #5C6BC0;
     color: white;
+    cursor: pointer;
     transition: all ease-in-out .2s;
 }
 
 .radial-container { float: right; }
 
-
 .current-question { 
     margin: 0 auto; 
-    padding: 40px 0 20px 0; 
+    padding: 30px 20px 20px 0; 
     font-size: 30px; 
-    line-height: 36px; 
+    line-height: 36px;
 }
+
 .quiz-content { 
     height: 150px; 
     padding:0px;
@@ -45,6 +51,7 @@
     text-align: center; 
     display: flex;
 }
+    .quiz-button:hover { cursor: pointer; }
     .quiz-button p { 
         padding: 20px;
         margin: 0 auto; 

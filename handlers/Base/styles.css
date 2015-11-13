@@ -46,6 +46,7 @@ h1,h2,h3 {
 }
 
 .hidden { display:none; }
+.not-visible { opacity: 0; visibility: hidden; }
 .main-logo { text-align: left; 
     height:95px; 
 }
@@ -80,23 +81,28 @@ h1, h2, h3 {
 
 
 /* TRANSITIONS */
-.carousel-enter {
+.fadeinright-enter,
+.fadeinright-appear {
   opacity: 0.01;
 }
 
-.carousel-enter.carousel-enter-active {
+.fadeinright-enter-active,
+.fadeinright-appear-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 500ms cubic-bezier(.76,.26,.52,.93);
 }
 
-.carousel-leave {
-  opacity: 1;
+.fadeinright-leave {
+  opacity: 0;
+  position: absolute;
 }
 
-.carousel-leave.carousel-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.fadeinright-leave-active {
+    opacity: 0.01;
+    transition: opacity 1ms linear;
 }
+
+
 
 
 
@@ -147,8 +153,8 @@ h1, h2, h3 {
     .Avatar__name { display: none; }
     .Avatar { width: 50px; margin-right: 20px; }
     .Avatar__image img:hover {
-        visibility: hidden;
-        display:none;
+        opacity: 0;
+        transition: opacity 300ms ease;
     }
 
     /* Welcome Page */
