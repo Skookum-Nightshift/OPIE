@@ -80,7 +80,7 @@ h1, h2, h3 {
 
 
 
-/* TRANSITIONS */
+/* TRANSITIONS FOR REACT TRANSITION GROUPS */
 .fadeinright-enter,
 .fadeinright-appear {
   opacity: 0.01;
@@ -109,6 +109,7 @@ h1, h2, h3 {
 
 
 
+
 /* LAYOUTS */
 /* For desktop: */
 .col-1 {width: 8.33%;}
@@ -128,6 +129,7 @@ h1, h2, h3 {
 @media only screen and (max-width: 1200px) {
     .main-logo { padding-left: 20px; }
     .Avatar { margin-right: 20px; }
+    .Account .container { margin:0 20px; }
     .radial-container { margin-right: 20px; }
     .Quiz p.current-question { padding-left: 20px; }
     .SideNavigation__wrapper { padding-left: 20px; }
@@ -162,6 +164,9 @@ h1, h2, h3 {
         opacity: 0;
         transition: opacity 300ms ease;
     }
+    .Account h1 { text-align: left; }
+    .Account .accountContent .Avatar__image { margin: 0 auto; }
+    .Account .editButtonGroup button { width: 100%; margin-bottom: 5px; }
 
     /* Welcome Page */
     .Home .Home-container h1 {
