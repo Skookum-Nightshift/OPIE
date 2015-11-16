@@ -2,14 +2,19 @@
 @import 'normalize.css';
 
 .Questions {
-    margin-top: 20px;
     background-color:#E8EAF6;
+    height: 100vh;
 }
 
-.content p { line-height: 22px; color:#777;}
-.content h1, .content h2 { color: #3F51B5; }
-.content { padding: 0 20px 20px 20px; }
+.content p, .add-question p { line-height: 22px; color:#777;}
+.content h1, .content h2,
+.add-question h1, .add-question h2 { color: #3F51B5; }
+.content { padding: 20px; }
 
+.CMS-description { margin-bottom: 30px; }
+.Questions .container .add-question {
+    padding-top: 100px; 
+}
     .question-block { 
         background-color: white; 
         padding: 20px; 
@@ -57,4 +62,8 @@
         padding: 10px 0;
     }
 
+.QuestionList { background-color: #efefef; padding-top: 1px; 
+    border-top: 5px solid #3F51B5; 
+    border-bottom: 2px solid #3F51B5;
+}
 

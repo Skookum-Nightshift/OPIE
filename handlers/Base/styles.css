@@ -133,6 +133,7 @@ h1, h2, h3 {
     .radial-container { margin-right: 20px; }
     .Quiz p.current-question { padding-left: 20px; }
     .SideNavigation__wrapper { padding-left: 20px; }
+    .Questions .container { margin: 0 20px; }
 }
 @media only screen and (min-width: 768px) {
     .mobile,

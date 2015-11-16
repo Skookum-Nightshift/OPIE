@@ -103,8 +103,8 @@ class Questions extends React.Component {
     render(): ?ReactElement {
     return (
       <div className="Questions">
-        <div className="col-12">
-            <div className="content add-question">
+        <div className="container">
+            <div className="add-question">
                 <h1> Content Management </h1>
                 <p className="CMS-description">This management system is where you add / delete questions.</p>
                
@@ -131,9 +131,11 @@ class Questions extends React.Component {
                     </div>
                 ) : '' }  
             </div>
+
+        <QuestionList items={this.state.items} itemDeleted={this.handleDeleted} />    
         </div>
 
-        <QuestionList items={this.state.items} itemDeleted={this.handleDeleted} />
+        
                     
         <RouteHandler />
       </div>
