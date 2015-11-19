@@ -1,6 +1,5 @@
 /** @define AppBase; use strict */
 @import 'normalize.css';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic|Open+Sans+Condensed:300);
 
 body { 
     background-color: #5C6BC0;
