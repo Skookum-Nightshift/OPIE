@@ -66,5 +66,8 @@
         transition: all .4s ease-in-out;
     }
 
+.userFullName .user-logout { 
+    cursor: pointer;
+}
 
 

@@ -27,6 +27,7 @@ constructor() {
   render(): ?ReactElement {
     return (
       <div className="SignUp">
+        <div className="container">
         <div className="col-6">
             <div className="signup-content">
                 <h1> Create an Account </h1>
@@ -48,12 +49,10 @@ constructor() {
                 
             </div>
             
-        </div>    
-
-            
-
+        </div>   
                     
         <RouteHandler />
+        </div>
       </div>
     );
   }

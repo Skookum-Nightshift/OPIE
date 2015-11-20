@@ -97,7 +97,7 @@ class Quiz extends React.Component {
     if (!question) { return <div></div>; }
 
     var answers = [];
-    var percent = percent = ( 100 / questions.length ) * currentIndex;
+    var percent = (( 100 / questions.length ) * currentIndex);
     var contentCom = '';
     
     if (question) {
@@ -114,7 +114,7 @@ class Quiz extends React.Component {
     return (
       <div className="Quiz">
         <div className="container">
-          <div className="radial-container"><RadialLoader progress={percent}/></div>
+          <div className="radial-container"><RadialLoader progress={percent.toFixed(0)}/></div>
           
           { percent !== 0 ? 
             (
